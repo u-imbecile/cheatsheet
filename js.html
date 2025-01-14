@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><!--
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="Form.html" method="post" onsubmit="return abc()">
+        <label for="">UserName</label>
+        <input type="text" id="us1"><br><br>
+        <label for="">Password</label>
+        <input type="password" id="ps1">
+        <input type="submit" value="Login">
+    </form>
+    <script src="regEx.js"></script>
+</body>
+</html>
+JS:
+function abc(){
+    var uss1 = document.getElementById("us1");
+    var pss1 = document.getElementById("ps1");
+    //Reg Ex Terms Definition
+    var capARegex=/[A-Z]+/;    
+    var smallARegex=/[a-z]+/;    
+    var numARegex=/[0-9]+/;    
+    var specialARegex=/\W+/; 
+
+var uflag=0, pflag=0;
+    if(uss1.ariaValueMax.match(capARegex) && uss1.value.match(smallARegex) && uss1.value.match(numARegex)){
+        //all ok for user
+    uflag=1;
+}
+if(pss1.value.match(capARegex) && pss1.value.match(smallARegex) && pss1.value.match(numARegex) && pss1.value.match(specialARegex)){
+    //all ok for password
+    if(pss1.value.length>=8 && pss1.value.length<=13){
+        pflag=1;
+    }
+    else{
+        alert("Length should be in 8 to 13");
+        pss1.focus();
+        return false;
+    }
+  }
+  if(uflag==0 || pflag==0){
+    if(uflag==0){
+        alert("Please Fill the Correct User Name.");
+        uss1.value=''; //Optional
+        uss1.focus();
+        return false;
+    }
+    else{
+        alert("Please Fill the Correct Password.");
+        pss1.value='';//Optional
+        pss1.focus();
+        return false;
+    }
+  }
+  else
+        return true;
+}
+
+    --></p>
+    <p><!--
+        Password hide
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background-color:antiquewhite;">
+    <center><h1>Application Form</h1></center>
+    <form action method="post">
+              <label>Name*:</label>
+              <input type="text" required maxlength="25" required size="30" placeholder="Enter your Name">
+              <br>
+              <br>
+              <label> Father's Name*:</label>
+              <input type="text" required maxlength="30" required size="30" placeholder="Enter Name">
+              <br>
+              <br>
+              <label>Mother's Name*:</label>
+              <input type="text" required maxlength="30" required size="30" placeholder="Enter Name">
+              <br>
+              <br>
+              <label>Date of Birth*:</label>
+              <input type="date" required maxlength="20">
+              <br>
+              <br>
+              <label>Gender*:</label>
+              <select>
+                        <option></option>
+                                  <option>Male</option>
+                                  <option>Female</option>
+              </select>
+              <br>
+              <br>
+              <label>Caste*:</label>
+              <select>
+                        <option></option>
+                                  <option>General</option>
+                                  <option>OBC</option>
+                                  <option>SC</option>
+                                  <option>ST</option>
+
+              </select>
+              <br>
+              <br>
+              <label>Address*:</label>
+              <br>
+              <textarea name="Address" required cols="30" rows="5"></textarea>
+              <br>
+              <br>
+              <label>Enter Your password:</label>
+              <br>
+              <input type="password" id="ps">
+            <i class="fa fa-eye-slash" id="btn" onclick="abc()"></i>
+    <br>
+    <br>
+    <label>Mobile No.*:</label>
+    <select required>
+        <option>+91(IND)</option>
+        <option>+1(US)</option>
+        <option>+44(UK)</option>
+        <option>+61(AUS)</option>
+    </select>
+    <input type="tel" required maxlength="10">
+    <br>
+    <br>
+    <label>Your image*:</label>
+    <br>
+    <input type="image" src="cshuiuhsh" alt="Select image" style="border: 1pt solid black;" height="200pt" width="150pt">
+    <br>
+    <br>
+    <label>Choose file(s) to upload*:</label>
+    <br>
+    <input type="file" accept=".jpg,.pdf" required multiple="multiple">
+    <br>
+    <br>
+    <label>Terms & Condition*:</label>
+    <br>
+    <input type="checkbox">I am a student of ITER College
+    <br>
+    <input type="checkbox">I did my (10+2) by securing atleast 60%
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+    <script src="Ass21Q1.js"></script>
+    </form> 
+    
+</body>
+</html>
+
+JS:
+var ps1=document.getElementById("ps");
+var btn1=document.getElementById("btn");
+
+var hideBtn=document.createElement("i");
+hideBtn.class="fa fa-eye";
+hideBtn.setAttribute("class","fa fa-eye");
+hideBtn.onclick=abc;
+
+function abc(){
+if(ps1.type=="password"){
+    ps1.type="text";
+    btn1.replaceWith(hideBtn);
+}
+else{
+    ps1.type="password";
+    hideBtn.replaceWith(btn1);
+}
+}
+
+    --></p>
+    <p>
+        <!--
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>Application Form</h1></center>
+    <form action method="post">
+              <label>Name*:</label>
+              <input type="text" required maxlength="25" required size="30" placeholder="Enter your Name">
+              <br>
+              <br>
+              <label> Father's Name*:</label>
+              <input type="text" required maxlength="30" required size="30" placeholder="Enter Name">
+              <br>
+              <br>
+              <label>Mother's Name*:</label>
+              <input type="text" required maxlength="30" required size="30" placeholder="Enter Name">
+              <br>
+              <br>
+              <label>Date of Birth*:</label>
+              <input type="date" required maxlength="20">
+              <br>
+              <br>
+              <label>Gender*:</label>
+              <select>
+                        <option></option>
+                                  <option>Male</option>
+                                  <option>Female</option>
+              </select>
+              <br>
+              <br>
+              <label>Caste*:</label>
+              <select>
+                        <option></option>
+                                  <option>General</option>
+                                  <option>OBC</option>
+                                  <option>SC</option>
+                                  <option>ST</option>
+
+              </select>
+              <br>
+              <br>
+              <label>Address*:</label>
+              <br>
+              <textarea name="Address" required cols="30" rows="5"></textarea>
+              <br>
+              <br>
+              <label>Mobile No.*:</label>
+              <select required>
+                        <option>+91(IND)</option>
+                        <option>+1(US)</option>
+                        <option>+44(UK)</option>
+                        <option>+61(AUS)</option>
+              </select>
+              <input type="tel" required maxlength="10">
+              <br>
+              <br>
+              <label>Your image*:</label>
+              <br>
+              <input type="image" src="cshuiuhsh" alt="Select image" style="border: 1pt solid black;" height="200pt" width="150pt">
+              <br>
+              <br>
+              <label>Choose file(s) to upload*:</label>
+              <br>
+              <input type="file" accept=".jpg, .png" id="img1">
+              <input type="button" value="Preview" id="btn" onclick="abc()">
+              <div id="div1">
+                   Preview The Image in Div  
+                </div>
+               
+                <br>
+                <br>
+                <label>Terms & Condition*:</label>
+                <br>
+                <input type="checkbox">I am a student of ITER College
+                <br>
+                <input type="checkbox">I did my (10+2) by securing atleast 60%
+                <br>
+                <br>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+                <script src="Ass21Q2.js"></script>
+            </form> 
+      
+  </body>
+  </html>
+  JS:
+  function abc(){
+  var f1=document.getElementById("img1");
+  var imgUrl=URL.createObjectURL(f1.files[0]);
+  var d1=document.getElementById("div1");
+  d1.innerHTML="";
+  var img111=document.createElement("img");
+  img111.src=imgUrl;
+  img111.height=300;
+  img111.width=200;
+  d1.appendChild(img111);
+  }
+  -->
+    </p>
+</body>
+</html>
